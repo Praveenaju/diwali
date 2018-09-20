@@ -10,12 +10,31 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<link rel="stylesheet" href="assets/css/main.css" />
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	</head>
 	<body>
+	<script>
+	
+	$( document ).ready(function() {
+	
+   	var urls      = window.location.href;     // Returns full URL
+//var origin   = window.location.origin; 
+  var myurls = urls.split("?name=");
+  var mylasturls = myurls[1];
+  var mynexturls = mylasturls.split("&");
+  var url = mynexturls[0];
+  document.getElementById("myname").innerHTML=url;
+});
 
+
+
+
+
+
+</script>
 		<!-- Header -->
 			<header id="header">
-				<div class="logo"><a href="#" style="font-size: xx-large;font-style: italic;font-family: -webkit-body;font-weight: bolder;font-stretch: ultra-condensed;">Praveen<span>first wishes</span></a></div>
+				<div class="logo"><a href="#" id="myname" style="font-size: xx-large;font-style: italic;font-family: -webkit-body;font-weight: bolder;font-stretch: ultra-condensed;"></a></div>
 			</header>
 
 		<!-- Main -->
