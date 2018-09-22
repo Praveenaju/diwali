@@ -15,7 +15,7 @@
 	<style>
 .wrapper {
     border:1px solid #000;
-    display:inline-block;
+  /*display:inline-block;*/
 }
 
 input,
@@ -54,10 +54,17 @@ button {
 function share()
 {
 var user=document.getElementById("username").value;
+
+if(user=="")
+{
+alert("Please Enter Your Good Name");
+}
+else
+{
 var a = document.getElementById('waShare'); //or grab it by tagname etc
 a.href = 'whatsapp://send?text=http://diwaliwishes.gearhostpreview.com/?name='+user;
-
 $("#waShare").css("display","block");
+}
 }
 
 
@@ -154,8 +161,8 @@ $("#waShare").css("display","block");
 				<div class="container">
 				<label class="txt_label">Your Good Name: <span>(Create Yours)</span></label>
 		     
-					<div class="wrapper">
-  <input type="text" name="names[]" class="txt_box names" maxlength="26" id="username" style="text-transform:capitalize"/>
+			    <div class="wrapper">
+                       <input type="text" name="names[]" class="txt_box names" maxlength="26" id="username" style="text-transform:capitalize"/>
   <button onclick="share()">Go</button>
 </div>
  <a href="" id="waShare" data-action="share/whatsapp/share" style="display:none">Share via Whatsapp</a> 
