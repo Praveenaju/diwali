@@ -41,27 +41,23 @@ button {
 	$( document ).ready(function() {
 	
    	var urls      = window.location.href;     // Returns full URL
-//var origin   = window.location.origin; 
-   myurls = urls.split("?name=");
-  var mylasturls = myurls[1];
-  var mynexturls = mylasturls.split("&");
-  var url = mynexturls[0];
-  document.getElementById("myname").innerHTML=url;
+    //var origin   = window.location.origin; 
+    myurls = urls.split("?name=");
+    var mylasturls = myurls[1];
+    var mynexturls = mylasturls.split("&");
+    var url = mynexturls[0];
+    document.getElementById("myname").innerHTML=url;
+
+	
 });
 
 function share()
 {
-if(document.getElementById("username").value=="")
-{
-alert("Please Enter your good name");
-return;
-}
-else
-{
+var user=document.getElementById("username").value;
+var a = document.getElementById('waShare'); //or grab it by tagname etc
+a.href = 'whatsapp://send?text=http://diwaliwishes.gearhostpreview.com/?name='+user;
 
-newurl=myurls[0]+"?=name"+document.getElementById("username").value;
-alert(newurl);
-}
+$("#waShare").css("display","block");
 }
 
 
@@ -159,11 +155,12 @@ alert(newurl);
 				<label class="txt_label">Your Good Name: <span>(Create Yours)</span></label>
 		     
 					<div class="wrapper">
-  <input type="text" name="names[]" class="txt_box names" maxlength="26" id="username" style="text-transform:capitalize" /><button onclick="share()">Share</button>
-    
+  <input type="text" name="names[]" class="txt_box names" maxlength="26" id="username" style="text-transform:capitalize"/>
+  <button onclick="share()">Go</button>
 </div>
-<a href="whatsapp://send?text=The text to share!" data-action="share/whatsapp/share">Share via Whatsapp</a>
-<a href="https://api.whatsapp.com/send?phone=9751902721&text=urlencodedtext">guh</a>
+ <a href="" id="waShare" data-action="share/whatsapp/share" style="display:none">Share via Whatsapp</a> 
+<!----a href="whatsapp://send?text="++"" data-action="share/whatsapp/share">Share via Whatsapp</a--->
+<!---a href="https://api.whatsapp.com/send?phone=9751902721&text=urlencodedtext">wtsappshare</a--->
 					<!--ul class="icons">
 						<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
 						<li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
