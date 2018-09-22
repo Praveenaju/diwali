@@ -6,27 +6,63 @@
 -->
 <html>
 	<head>
-		<title>Caminar by TEMPLATED</title>
+		<title>Diwali Wishes</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	</head>
+	<style>
+.wrapper {
+    border:1px solid #000;
+    display:inline-block;
+}
+
+input,
+button {
+    background-color:transparent;
+    border:0;
+}
+	.txt_label{font-size:15px}
+	.txt_label{font-family:rock}
+	#copyright_wrapper{border-top:1px solid #6580a3;background:#395070}
+	#copyright{max-width:1000px;margin:0 auto;padding:6px 0}
+	#copyright p{color:#cfcfcf;font-size:12px}.art_variation p{font-size:14px;color:#C4A069}
+	#loadoriginal,.art_var{width:24.1%;display:inline-block}
+	#loadoriginal img,.art_var img{width:94%;border-radius:4px;border:1px solid #D5D29B;cursor:pointer}
+	.art_pictures_wrapper{margin-top:20px}.generate_share,.txt_label{margin-top:16px}
+	.art_pictures img{border:1px solid #c8c8c8;background:#e2e2e2;max-width:98%;padding:1%;border-radius:4px}
+	.txt_label{display:block;font-size:18px;color:#4c4c4c;margin-bottom:4px}
+	.txt_label span{font-size:10px}
+	</style>
 	<body>
 	<script>
-	
+	var myurls=[];
 	$( document ).ready(function() {
 	
    	var urls      = window.location.href;     // Returns full URL
 //var origin   = window.location.origin; 
-  var myurls = urls.split("?name=");
+   myurls = urls.split("?name=");
   var mylasturls = myurls[1];
   var mynexturls = mylasturls.split("&");
   var url = mynexturls[0];
   document.getElementById("myname").innerHTML=url;
 });
 
+function share()
+{
+if(document.getElementById("username").value=="")
+{
+alert("Please Enter your good name");
+return;
+}
+else
+{
 
+newurl=myurls[0]+"?=name"+document.getElementById("username").value;
+alert(newurl);
+}
+}
 
 
 
@@ -120,15 +156,24 @@
 		<!-- Footer -->
 			<footer id="footer">
 				<div class="container">
-					<ul class="icons">
+				<label class="txt_label">Your Good Name: <span>(Create Yours)</span></label>
+		     
+					<div class="wrapper">
+  <input type="text" name="names[]" class="txt_box names" maxlength="26" id="username" style="text-transform:capitalize" /><button onclick="share()">Share</button>
+    
+</div>
+<a href="whatsapp://send?text=The text to share!" data-action="share/whatsapp/share">Share via Whatsapp</a>
+<a href="https://api.whatsapp.com/send?phone=9751902721&text=urlencodedtext">guh</a>
+					<!--ul class="icons">
 						<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
 						<li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
 						<li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
 						<li><a href="#" class="icon fa-envelope-o"><span class="label">Email</span></a></li>
-					</ul>
+					</ul-->
 				</div>
+				
 				<div class="copyright">
-					&copy; Untitled. All rights reserved. Images <a href="https://unsplash.com">Unsplash</a> Design <a href="https://templated.co">TEMPLATED</a>
+					&copy; Untitled. All rights reserved. Images <a href="#">PraveenAju</a> Design <a href="#">myWish</a>
 				</div>
 			</footer>
 
