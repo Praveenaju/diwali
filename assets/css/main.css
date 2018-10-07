@@ -1991,7 +1991,7 @@
 	button,
 	.button {
 		background-color: #f2f2f2;
-		color: #000 !important;
+		color: #fff !important;
 	}
 
 		input[type="submit"]:hover,
@@ -1999,7 +1999,7 @@
 		input[type="button"]:hover,
 		button:hover,
 		.button:hover {
-			background-color: white;
+			/*background-color: white; */
 		}
 
 		input[type="submit"]:active,
@@ -2246,8 +2246,10 @@
 	input[type="email"],
 	select,
 	textarea {
-		background: rgba(144, 144, 144, 0.075);
-		border-color: rgba(144, 144, 144, 0.25);
+		
+		background: rgb(189, 189, 189);
+    border-color: rgba(144, 144, 144, 0.25);
+	
 	}
 
 		input[type="text"]:focus,
